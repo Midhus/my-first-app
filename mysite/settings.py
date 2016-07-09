@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'hosting',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': '192.168.0.10',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -100,8 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
